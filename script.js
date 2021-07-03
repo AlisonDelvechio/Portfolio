@@ -14,7 +14,7 @@ const mainImg = document.querySelector(".main-circle img")
 
 let mX = 0;
 let mY = 0;
-const z = 90;
+const z = 50;
 
 const animatedCircles = (e, x, y)=> {
     if (x < mX) {
