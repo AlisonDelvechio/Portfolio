@@ -22,6 +22,90 @@ html {
     justify-content: center;
     align-items: center;
 }
+
+/* Main button */
+.main-btn {
+    position: absolute;
+    bottom: 3rem;
+    width: 8rem;
+    height: 8rem;
+    background-color: #9b0e0e;
+    border-radius: 50%;
+    border: 0.2rem dotted #fff;
+    padding: 0.1rem;
+    overflow: hidden;
+}
+
+.main-btn-content {
+    width: 100%;
+    height: 100%;
+    /* border: 0.2rem dotted #e7be08; */
+    border-radius: 50%;
+    /* transform: rotate(40deg); */
+    transition: transform 0.2s, border 0.2s;
+}
+
+.main-btn:hover .main-btn-content {
+    transform: rotate(50deg);
+    border: 2.rem dotted #9b0e0e;
+    transition: transform 0.2s 0.2s,border 0.2s;
+}
+
+.main-btn-line {
+    position: absolute;
+    top: 1.9rem;
+    width: 2.5rem;
+    height: 0.6rem;
+    border: 0.2rem solid #fff;
+}
+
+.main-btn-line:nth-child(1){
+    transform: rotateZ(-45deg) translateX(-0.65rem);
+    transform-origin: left center;
+    border-right: none;
+}
+
+.main-btn-line:nth-child(2){
+    transform: rotateZ(45deg) translateX(0.65rem);
+    transform-origin: right center;
+    border-left: none;
+}
+
+.main-btn-line:nth-child(3){
+    transform: rotateZ(90deg) translateX(0.5rem);
+    border-left: none;
+}
+
+.main-btn span {
+    position: absolute;
+    bottom: 2rem;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ripple {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #e7be08;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rippleAnim 0.5s forwards;
+}
+
+@keyframes rippleAnim {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 210%;
+        height: 210%;
+    }
+}
+/* End of Main button */
 /* End of Common styles */
 
 /* Mouse circle */
@@ -222,87 +306,70 @@ html {
 }
 /* End of Featured text */
 
-/* Main button */
-.main-btn {
-    position: absolute;
-    bottom: 3rem;
-    width: 8rem;
-    height: 8rem;
-    background-color: #9b0e0e;
-    border-radius: 50%;
-    /* border: 0.2rem dotted #fff; */
-    padding: 0.1rem;
-    overflow: hidden;
+/* End of Section 1 */
+
+/* Section 2 */
+.section-2 {
+    position: relative;
+    padding: 10rem 10rem 15rem 10rem;
 }
 
-.main-btn-content {
-    width: 100%;
-    height: 100%;
-    /* border: 0.2rem dotted #e7be08; */
-    border-radius: 50%;
-    /* transform: rotate(40deg); */
-    transition: transform 0.2s, border 0.2s;
-}
-
-.main-btn:hover .main-btn-content {
-    transform: rotate(50deg);
-    border: 2.rem dotted #9b0e0e;
-    transition: transform 0.2s 0.2s,border 0.2s;
-}
-
-.main-btn-line {
-    position: absolute;
-    top: 1.9rem;
-    width: 2.5rem;
-    height: 0.6rem;
-    border: 0.2rem solid #fff;
-}
-
-.main-btn-line:nth-child(1){
-    transform: rotateZ(-45deg) translateX(-0.65rem);
-    transform-origin: left center;
-    border-right: none;
-}
-
-.main-btn-line:nth-child(2){
-    transform: rotateZ(45deg) translateX(0.65rem);
-    transform-origin: right center;
-    border-left: none;
-}
-
-.main-btn-line:nth-child(3){
-    transform: rotateZ(90deg) translateX(0.5rem);
-    border-left: none;
-}
-
-.main-btn span {
-    position: absolute;
-    bottom: 2rem;
+/* Section 2 heading */
+.section-2-heading {
+    font-size: 2rem;
+    font-weight: 300;
     color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
     text-transform: uppercase;
-}
-
-.ripple {
     position: absolute;
+    top: 50%;
+    left: 10rem;
+    transform: translateY(-50%);
     width: 0;
-    height: 0;
-    background-color: #e7be08;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: rippleAnim 0.5s forwards;
+    word-break: break-all;
+    line-height: 4;
+}
+/* End of Section 2 heading */
+
+/* About me text */
+.about-me-text {
+    width: 80%;
+    margin: auto;
+    text-align: justify;
 }
 
-@keyframes rippleAnim {
+.about-me-text span {
+    font-family: "Poppins", sans-serif;
+    font-size: 10rem;
+    font-weight: bold;
+    color: #aaa;
+    letter-spacing: 0.5rem;
+    line-height: 0.9;
+    text-shadow: 0 0 1rem #9b0e0e;
+    mix-blend-mode: color-dodge;
+}
+
+@keyframes aboutMeTextAnim {
     0% {
-        width: 0;
-        height: 0;
+        color: #aaa;
+        top: 0;
+    }
+    10%, 
+    90% {
+        color: #fff;
+        top: 2rem;
     }
     100% {
-        width: 210%;
-        height: 210%;
+        color: #aaa;
+        top: 0;
     }
 }
-/* End of Main button */
-/* End of Section 1 */
+/* End of About me text */
+
+/* Section 2 main button */
+.section-2 .main-btn {
+    left: 50%;
+    bottom: -5rem;
+    transform: translateX(-50%);
+}
+/* End of Section 2 main button */
+/* End of Section 2 */
