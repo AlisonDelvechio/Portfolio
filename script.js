@@ -52,12 +52,12 @@ document.body.addEventListener("mousemove", (e)=> {
 
     mouseCircleFn(x, y);
     animatedCircles(e, x, y)
-})
+});
 
 document.addEventListener('mouseleave', ()=> {
     mouseCircle.style.opacity = '0';
     mouseDot.style.opacity = '0';
-})
+});
 
 // Main button
 const mainBtns = document.querySelectorAll('.main-btn')
@@ -74,13 +74,14 @@ mainBtns.forEach(btn => {
         ripple.style.left = `${left}px`;
         ripple.style.top = `${top}px`;
         btn.prepend(ripple);
-    })
+    });
 
     btn.addEventListener('mouseleave', ()=> {
         btn.removeChild(ripple);
-    })
-})
+    });
+});
 // End of Main button
+
 const aboutMeText = document.querySelector('.about-me-text')
 const aboutMeTextContent = "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.";
 
@@ -91,8 +92,8 @@ Array.from(aboutMeTextContent).forEach((char) => {
 
     span.addEventListener('mouseenter', (e)=> {
         e.target.style.animation = "aboutMeTextAnim 10s infinite";
-    })
-})
+    });
+});
 // About me text
 // End of About me text
 
@@ -102,7 +103,7 @@ const projects = document.querySelectorAll('.project');
 projects.forEach((project)=> {
     project.addEventListener("mouseenter", ()=> {
         project.firstElementChild.style.top = `-${project.firstElementChild.offsetHeight - project.offsetHeight + 20}px`;
-    })
+    });
 
     project.addEventListener("mouseleave", ()=> {
         project.firstElementChild.style.top = "2rem";
