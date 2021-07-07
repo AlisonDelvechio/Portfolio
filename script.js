@@ -178,5 +178,44 @@ projectsBtn.addEventListener("click", (e)=> {
     showHideBool = !showHideBool;
 });
 // End of Projects button
-
 // End of Projects
+
+// Section 4
+document.querySelectorAll(".service-btn").forEach((service)=> {
+    service.addEventListener('click', (e)=> {
+        e.preventDefault();
+
+        const serviceText = service.nextElementSibling;
+        serviceText.classList.toggle("change");
+
+        const rightPosition = serviceText.classList.contains("change") ? `calc(100% - ${getComputedStyle(service.firstElementChild).width})` : 0;
+
+        service.firstElementChild.style.right = rightPosition;
+    });
+});
+// End of Section 4
+
+// Section 5
+// Form
+const formHeading = document.querySelector('.form-heading');
+const formInputs = document.querySelectorAll('.contact-form-input');
+
+formInputs.forEach((input)=> {
+    input.addEventListener('focus', ()=> {
+        formHeading.style.opacity = "0";
+        setTimeout(()=> {
+            formHeading.textContent = `Your ${input.placeholder}`;
+            formHeading.style.opacity = "1";
+        }, 300);
+    });
+
+    input.addEventListener('blur', ()=> {
+        formHeading.style.opacity = "0";
+        setTimeout(()=> {
+            formHeading.textContent = `Let's Talk`;
+            formHeading.style.opacity = "1";
+        }, 300);
+    });
+});
+// End of Form
+// End of Section 5
