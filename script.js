@@ -82,6 +82,27 @@ mainBtns.forEach(btn => {
 });
 // End of Main button
 
+// Navigation
+const menuIcon = document.querySelector('.menu-icon');
+const navBar = document.querySelector('.navbar');
+
+document.addEventListener('scroll', ()=> {
+    menuIcon.classList.add('show-menu-icon');
+    navBar.classList.add('hide-navbar');
+
+    if (window.scrollY === 0) {
+        menuIcon.classList.remove('show-menu-icon');
+        navBar.classList.remove('hide-navbar');
+    }
+});
+
+menuIcon.addEventListener('click', ()=> {
+    menuIcon.classList.remove('show-menu-icon');
+    navBar.classList.remove('hide-navbar');
+});
+// End of Navigation
+
+// About me text
 const aboutMeText = document.querySelector('.about-me-text')
 const aboutMeTextContent = "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.";
 
@@ -94,7 +115,6 @@ Array.from(aboutMeTextContent).forEach((char) => {
         e.target.style.animation = "aboutMeTextAnim 10s infinite";
     });
 });
-// About me text
 // End of About me text
 
 // Projects
