@@ -5,7 +5,7 @@ const mouseDot = document.querySelector('.mouse-dot')
 const mouseCircleFn = (x, y) => {
     mouseCircle.style.cssText = `top:${y}px; left:${x}px; opacity: 1`;
     mouseDot.style.cssText = `top: ${y}px; left: ${x}px; opacity: 1`;
-}
+};
 // End of Mouse circle
 
 // Animated circles
@@ -39,7 +39,7 @@ const animatedCircles = (e, x, y)=> {
 
     mX = e.clientX;
     mY = e.clientY;
-}
+};
 // End of Animated circles
 
 document.body.addEventListener("mousemove", (e)=> {
@@ -100,7 +100,7 @@ menuIcon.addEventListener('click', ()=> {
 
 // About me text
 const aboutMeText = document.querySelector('.about-me-text')
-const aboutMeTextContent = "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.";
+const aboutMeTextContent = "Hi, my name is Alison and I'm full stack developer. Specialized in WEB and Mobile applications aiming for the best user experience. Thank you for visiting my Portfolio!";
 
 Array.from(aboutMeTextContent).forEach((char) => {
     const span = document.createElement("span");
@@ -120,7 +120,9 @@ const projectHideBtn = document.querySelector('.project-hide-btn ');
 
 projects.forEach((project, i)=> {
     project.addEventListener("mouseenter", ()=> {
-        project.firstElementChild.style.top = `-${project.firstElementChild.offsetHeight - project.offsetHeight + 20}px`;
+        project.firstElementChild.style.top = `-${
+            project.firstElementChild.offsetHeight - project.offsetHeight + 20
+        }px`;
     });
 
     project.addEventListener("mouseleave", ()=> {
@@ -137,7 +139,7 @@ projects.forEach((project, i)=> {
             bigImg.className = "project-img";
 
             const imgPath = project.firstElementChild.getAttribute('src').split(".")[0];
-            bigImg.setAttribute("src", `${imgPath}.jpg`);
+            bigImg.setAttribute("src", `${imgPath}-big.jpg`);
             bigImgWrapper.appendChild(bigImg);
             document.body.style.overflowY = "hidden";
 
@@ -168,7 +170,7 @@ const showProjects = (project, i)=> {
     setTimeout(()=> {
         project.style.opacity = "1";
     }, i * 200);
-}
+};
 
 const hideProjects = (project, i)=> {
     setTimeout(()=> {
@@ -179,7 +181,7 @@ const hideProjects = (project, i)=> {
     setTimeout(()=> {
         project.style.opacity = "0";
     }, i * 100);
-}
+};
 
 projectsBtn.addEventListener("click", (e)=> {
     e.preventDefault();
@@ -268,11 +270,11 @@ const messages = document.querySelectorAll('.message');
 const error = (input, message)=> {
     input.nextElementSibling.classList.add('error');
     input.nextElementSibling.textContent = message;
-}
+};
 
 const sucess = (input)=> {
     input.nextElementSibling.classList.remove('error');
-}
+};
 
 const checkRequiredFields = (inputArr)=> {
     inputArr.forEach((input)=> {
@@ -280,7 +282,7 @@ const checkRequiredFields = (inputArr)=> {
             error(input, `${input.id} is required`);
         }
     });
-}
+};
 
 const checkLength = (input, min)=> {
     if (input.value.trim().length < min) {
@@ -288,7 +290,7 @@ const checkLength = (input, min)=> {
     } else {
         sucess(input);
     }
-}
+};
 
 const checkEmail = (input)=> {
     const regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -298,7 +300,7 @@ const checkEmail = (input)=> {
     } else {
         error(input, `Email is not valid`);
     }
-}
+};
 
 form.addEventListener("submit", (e)=> {
     checkLength(username, 5);
