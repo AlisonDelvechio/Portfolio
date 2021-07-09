@@ -183,18 +183,18 @@ const hideProjects = (project, i)=> {
     }, i * 100);
 };
 
-projectsBtn.addEventListener("click", (e)=> {
-    e.preventDefault();
+// projectsBtn.addEventListener("click", (e)=> {
+//     e.preventDefault();
 
-    projectsBtn.firstElementChild.nextElementSibling.classList.toggle("change");
+//     projectsBtn.firstElementChild.nextElementSibling.classList.toggle("change");
 
-    showHideBool ? (projectsBtnText.textContent = "Show Less"): projectsBtnText.textContent = "Show More"; 
+//     showHideBool ? (projectsBtnText.textContent = "Show Less"): projectsBtnText.textContent = "Show More"; 
 
-    projects.forEach((project, i)=> {
-        i >= 6 && (showHideBool ? showProjects(project, i) : hideProjects(project, i))
-    });
-    showHideBool = !showHideBool;
-});
+//     projects.forEach((project, i)=> {
+//         i >= 6 && (showHideBool ? showProjects(project, i) : hideProjects(project, i))
+//     });
+//     showHideBool = !showHideBool;
+// });
 // End of Projects button
 // End of Projects
 
