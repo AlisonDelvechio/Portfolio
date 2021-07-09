@@ -305,13 +305,17 @@ const checkEmail = (input)=> {
 }
 
 form.addEventListener("submit", (e)=> {
-    e.preventDefault();
-
     checkLength(username, 5);
     checkLength(subject, 5);
     checkLength(message, 10);
     checkEmail(email);
     checkRequiredFields([username, email, subject, message]);
+
+    const notValid = Array.from(messages).find((message)=> {
+        return message.classList.contains("error");
+    });
+
+    notValid && e.preventDefault();
 });
 // End of Form validation
 // End of Section 5
