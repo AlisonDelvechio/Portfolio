@@ -21,24 +21,20 @@ const animatedCircles = (e, x, y)=> {
         circles.forEach(circle => {
             circle.style.left = `${z}px`;
         })
-        // mainImg.style.left = `${z}px`;
     } else if (x > mX) {
         circles.forEach(circle => {
             circle.style.left = `-${z}px`;
         })
-        // mainImg.style.left = `-${z}px`;
     }
 
     if (y < mY) {
         circles.forEach(circle => {
             circle.style.top = `${z}px`;
         })
-        // mainImg.style.top = `${z}px`;
     } else if (y > mY) {
         circles.forEach(circle => {
             circle.style.top = `-${z}px`;
         })
-        // mainImg.style.top = `-${z}px`;
     }
 
     mX = e.clientX;
